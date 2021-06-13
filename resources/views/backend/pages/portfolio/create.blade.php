@@ -179,6 +179,21 @@
                                         </div>
                                     </div>
                                     <div class="row g-3">
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                {{-- <label class="form-label">Project Description <span class="text-danger" style="font-size: 11px;">*</span></label> --}}
+                                                <span class="form-note">Add new section? click <b>"Add"</b> button & Remove last created section? click <b>"Remove"</b> button</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="form-group">
+                                                <button type="button" id="add_sec" class="btn btn-sm btn-info">Add</button>
+                                                <button type="button" id="remove_sec" class="btn btn-sm btn-danger">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="more_sec"></div>
+                                    <div class="row g-3">
                                         <div class="col-lg-7 offset-lg-5">
                                             <div class="form-group mt-2">
                                                 <button type="submit" class="btn btn-sm btn-dark">Save</button>
@@ -201,5 +216,23 @@
         $(document).ready(function() {
             $('#select2_service').select2();
         });
+    </script>
+
+    <script type="text/javascript">
+        var counter = 0;
+        $(document).ready(function() {  
+        $("#add_sec").on("click", function() {  
+            $("#more_sec").append(
+                "<div class='row g-3'><div class='col-lg-5'><div class='form-group'><label class='form-label'>Section " + (counter + 1) + "</label></div></div><div class='col-lg-7'><div class='row'><div class='col-lg-8'><div class='form-group'><input type='text' class='form-control' name='title[]' placeholder='Section Title'></div></div><div class='col-lg-4'><div class='form-group'><input type='file' class='custom-file-input' name='images[]'><label class='custom-file-label'>Choose file</label></div></div><div class='col-lg-12 mt-2'><div class='form-group'><textarea type='text' class='form-control' name='description[]' placeholder='Section Description'></textarea></div></div></div></div></div>"
+            );
+            counter++;
+        });  
+        $("#remove_sec").on("click", function() {  
+            $("#more_sec").children().last().remove();
+            if (counter > 0) {
+                counter--;
+            }
+        }); 
+    });
     </script>
 @endsection

@@ -67,8 +67,22 @@
 			</div>
 		</div>
 	</section>
-
+@foreach (App\PortfolioSection::where('portfolio_id', $portfolio->id)->get() as $sec)
 	<section id="tech" class="tech">
+		<div class="container" data-aos="fade-up">
+			<div class="case-tech">
+				<h3>{{ $sec->title }}</h3>
+				<p class="mt-3">
+					{{ $sec->description }}
+				</p>
+			</div>
+			<div class="case-tech-img text-center mt-4">
+				<img src="{{ asset($sec->images) }}">
+			</div>
+		</div>
+	</section>
+@endforeach
+	{{-- <section id="tech" class="tech">
 		<div class="container" data-aos="fade-up">
 			<div class="case-tech">
 				<h2>Technology in Use</h2>
@@ -175,5 +189,5 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 @endsection

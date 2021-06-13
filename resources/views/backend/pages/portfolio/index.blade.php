@@ -84,6 +84,9 @@
                                                 </th>
                                             </tr>
                                         </thead>
+                                        @php
+                                            $n = 1;
+                                        @endphp
                                         <tbody>
                                             @foreach ($portfolios as $portfolio)
                                                 <tr class="nk-tb-item">
@@ -93,7 +96,7 @@
                                                             <label class="custom-control-label" for="uid1"></label>
                                                         </div>
                                                     </td> --}}
-                                                    <td class="nk-tb-col">01</td>
+                                                    <td class="nk-tb-col">{{ $n }}</td>
                                                     <td class="nk-tb-col">
                                                         <div class="user-card">
                                                             <div class="user-avatar bg-dim-primary d-none d-sm-flex">
@@ -164,6 +167,9 @@
                                                         </ul>
                                                     </td>
                                                 </tr>
+                                                @php
+                                                    $n++;
+                                                @endphp
                                             @endforeach
                                         </tbody>
                                     </table>

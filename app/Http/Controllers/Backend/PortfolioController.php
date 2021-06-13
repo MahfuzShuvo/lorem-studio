@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Portfolio;
 use App\PortfolioImages;
+use App\PortfolioSection;
 use File;
 
 class PortfolioController extends Controller
@@ -110,6 +111,33 @@ class PortfolioController extends Controller
         // else {
         //     $portfolio_image->image = "public/assets/images/no-image.jpg";
         // }
+        if ($request->title) {
+            foreach ($request->title as $key => $title) {
+                $sec = new PortfolioSection();
+
+                $sec->portfolio_id = $portfolio->id;
+                $sec->title = $title;
+                if ($request->description[$key]) {
+                    $sec->description = $request->description[$key];
+                } else {
+                    $sec->description = null;
+                }
+                if ($request->images[$key]) {
+                    $image = $request->images[$key];
+
+                    $imagename = $image->getClientOriginalName();
+                    $imagesize = $image->getClientSize();
+                    $ext = $image->getClientOriginalExtension();
+
+                    $image_title = uniqid().time().'.'.$ext;
+                    $image->move('public/assets/images/portfolio/section/', $image_title);
+                    $sec->images = "public/assets/images/portfolio/section/".$image_title;
+                } else {
+                    $sec->images = "public/assets/images/no-image.jpg";
+                }
+                $sec->save();
+            }
+        }
         
 
         session()->flash('success', 'Portfolio added successfully');

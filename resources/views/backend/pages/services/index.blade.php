@@ -73,6 +73,9 @@
                                                 </th>
                                             </tr>
                                         </thead>
+                                        @php
+                                            $n = 1;
+                                        @endphp
                                         <tbody>
                                             @foreach ($services as $service)
                                                 <tr class="nk-tb-item">
@@ -82,7 +85,7 @@
                                                             <label class="custom-control-label" for="uid1"></label>
                                                         </div>
                                                     </td> --}}
-                                                    <td class="nk-tb-col">01</td>
+                                                    <td class="nk-tb-col">{{ $n }}</td>
                                                     <td class="nk-tb-col">
                                                         <span class="tb-lead">{{ $service->name }}</span>
                                                     </td>
@@ -130,6 +133,9 @@
                                                         </ul>
                                                     </td>
                                                 </tr>
+                                                @php
+                                                    $n++;
+                                                @endphp
                                             @endforeach
                                         </tbody>
                                     </table>
