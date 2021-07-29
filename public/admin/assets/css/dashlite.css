@@ -3687,9 +3687,9 @@ a.text-info:hover, a.text-info:focus { color: #068294 !important; }
 
 a.text-warning:hover, a.text-warning:focus { color: #ae8608 !important; }
 
-a.text-danger:hover, a.text-danger:focus { color: #c92619 !important; }
+a.text-danger:hover, a.text-danger:focus { color: #a22016 !important; }
 .text-danger {
-  color: #c92619;
+  color: #c92619 !important;
 }
 .text-dark { color: #1c2b46 !important; }
 
@@ -9443,7 +9443,7 @@ body.nav-shown { overflow: hidden; }
 
 .nk-footer-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 
-.nk-footer-copyright { color: #8094ae; }
+.nk-footer-copyright { color: #8094ae; font-size: 12px; }
 
 .nk-footer-copyright a { color: inherit; }
 
@@ -11738,7 +11738,11 @@ p > span > .icon.ni { vertical-align: middle; }
 
 @media (min-width: 1200px) { .nav-tabs-sm .nav-item { padding-right: 1.25rem; } }
 
-.invest-data { display: flex; align-items: flex-end; justify-content: space-between; }
+.invest-data { 
+  display: flex; 
+  /*align-items: flex-end; */
+  justify-content: space-between; 
+}
 
 .invest-data-history { margin-right: 20px; flex-grow: 1; }
 

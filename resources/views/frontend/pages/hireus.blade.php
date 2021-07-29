@@ -78,7 +78,7 @@
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                 </p>
             </div>
-            <form action="{{ url('/hire_us') }}" method="post" enctype="multipart/form-data" style="margin-left: -20px;">
+            <form action="{{ route('hireus.store') }}" method="post" enctype="multipart/form-data" style="margin-left: -20px;">
 					@csrf
 					
 					<div class="row mt-lg-5">

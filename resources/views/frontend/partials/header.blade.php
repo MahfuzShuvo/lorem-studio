@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-10 text-center">
                 <div class="content-box">
                     <div class="row">
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12 col-lg-8 col-md-8">
                             <h3>The Best Agency For Your Creative Business</h3>
                         </div>
                     </div>

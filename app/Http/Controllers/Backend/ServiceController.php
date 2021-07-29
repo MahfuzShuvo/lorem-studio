@@ -70,7 +70,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -81,7 +81,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return view('backend.pages.services.edit', compact('service'));
     }
 
     /**
@@ -93,7 +94,15 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $service = Service::find($id);
+
+        $service->name = $request->name;
+        $service->description = $request->description;
+        $service->save();
+
+        session()->flash('success', 'Service updated successfully');
+        return redirect()->route('admin.service');
+
     }
 
     /**
@@ -104,6 +113,26 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::find($id);
+        $service->delete();
+
+        session()->flash('message', 'Service deleted successfully');
+        return redirect()->back();
+    }
+
+    public function status($id)
+    {
+        $service = Service::find($id);
+
+        if ($service->status == 0) {
+            $service->status = 1;
+            $service->save();
+        } else {
+            $service->status = 0;
+            $service->save();
+        }
+
+        session()->flash('success', 'Status changed successfully');
+        return redirect()->back();
     }
 }

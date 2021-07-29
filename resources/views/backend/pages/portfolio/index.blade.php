@@ -128,11 +128,15 @@
                                                         {{ App\Service::where('id', $portfolio->service_id)->first()->name }}
                                                     </td>
                                                     <td class="nk-tb-col tb-col-md">
-                                                        <span class="tb-status text-success">Active</span>
+                                                        @if ($portfolio->status == 0)
+                                                            <span class="badge badge-pill badge-outline-primary" style="font-size: 11px;"><b>Normal</b></span>
+                                                        @else
+                                                            <span class="badge badge-pill badge-outline-warning" style="font-size: 11px;"><b>Trendy</b></span>
+                                                        @endif
                                                     </td>
                                                     <td class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1">
-                                                            <li class="nk-tb-action-hidden">
+                                                            {{-- <li class="nk-tb-action-hidden">
                                                                 <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Wallet">
                                                                     <em class="icon ni ni-wallet-fill"></em>
                                                                 </a>
@@ -147,19 +151,45 @@
                                                                     <em class="icon ni ni-user-cross-fill"></em>
                                                                 </a>
                                                             </li>
-                                                            <li>
+                                                            <li> --}}
                                                                 <div class="drodown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                     <div class="dropdown-menu dropdown-menu-right">
                                                                         <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                                            <li>
+                                                                                <a href="{{ route('portfolio.show', $portfolio->id) }}">
+                                                                                    <em class="icon ni ni-eye"></em>
+                                                                                    <span>View</span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="{{ route('portfolio.edit', $portfolio->id) }}">
+                                                                                    <em class="icon ni ni-edit"></em>
+                                                                                    <span>Edit</span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a data-target="#deleteModal{{ $portfolio->id }}" data-toggle="modal">
+                                                                                    <em class="icon ni ni-trash"></em>
+                                                                                    <span>Delete</span>
+                                                                                </a>
+                                                                            </li>
                                                                             <li class="divider"></li>
-                                                                            <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                                            @if ($portfolio->status == 0)
+                                                                                <li>
+                                                                                    <a href="{{ route('portfolio.status', $portfolio->id) }}" class="text-warning">
+                                                                                        <em class="icon ni ni-check-circle-fill"></em>
+                                                                                        <span>Mark as Trendy</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            @else
+                                                                                <li>
+                                                                                    <a href="{{ route('portfolio.status', $portfolio->id) }}" class="text-primary">
+                                                                                        <em class="icon ni ni-cross-circle-fill"></em>
+                                                                                        <span>Mark as Normal</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            @endif
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -167,6 +197,31 @@
                                                         </ul>
                                                     </td>
                                                 </tr>
+                                                <!-- Delete Modal start -->
+                                                <div class="modal fade" tabindex="-1" id="deleteModal{{ $portfolio->id }}">
+                                                    <div class="modal-dialog modal-dialog-top" role="document">
+                                                        <div class="modal-content">
+                                                            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <em class="icon ni ni-cross"></em>
+                                                            </a>
+                                                            <div class="modal-header">
+                                                                <h6 class="modal-title">Are you sure to delete?</h6>
+                                                            </div>
+                                                            {{-- <div class="modal-body">
+                                                                
+                                                            </div> --}}
+                                                            <div class="modal-footer">
+                                                                <form action="{{ route('portfolio.delete', $portfolio->id) }}" method="post">
+                                                                    @method('delete')
+                                                                    {{ csrf_field() }}
+                                                                    <button type="submit" class="btn btn-info btn-sm" style="font-size: 13px;">YES, delete permanently</button>
+                                                                </form>
+                                                                <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" style="font-weight: 400; font-size: 12px;">NO</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Delete Modal end -->
                                                 @php
                                                     $n++;
                                                 @endphp

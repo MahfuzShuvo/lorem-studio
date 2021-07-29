@@ -56,10 +56,19 @@ Route::group(['prefix' => 'admin'], function () {
 	// services
 	Route::get('/service', 'Backend\PagesController@services')->name('admin.service');
 	Route::get('/service/create', 'Backend\ServiceController@create')->name('service.create');
+	Route::get('/service/edit/{id}', 'Backend\ServiceController@edit')->name('service.edit');
+	Route::post('/service/update/{id}', 'Backend\ServiceController@update')->name('service.update');
+	Route::get('/service/status/{id}', 'Backend\ServiceController@status')->name('service.status');
+	Route::delete('/service/delete/{id}', 'Backend\ServiceController@destroy')->name('service.delete');
 
 	// portfolio
 	Route::get('/portfolio', 'Backend\PagesController@portfolio')->name('admin.portfolio');
 	Route::get('/portfolio/create', 'Backend\PortfolioController@create')->name('portfolio.create');
+	Route::get('/portfolio/show/{id}', 'Backend\PortfolioController@show')->name('portfolio.show');
+	Route::get('/portfolio/edit/{id}', 'Backend\PortfolioController@edit')->name('portfolio.edit');
+	Route::post('/portfolio/update/{id}', 'Backend\PortfolioController@update')->name('portfolio.update');
+	Route::get('/portfolio/status/{id}', 'Backend\PortfolioController@status')->name('portfolio.status');
+	Route::delete('/portfolio/delete/{id}', 'Backend\PortfolioController@destroy')->name('portfolio.delete');
 
 	// hire us
 	Route::get('/hireus', 'Backend\PagesController@hireus')->name('admin.hireus');
@@ -69,7 +78,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::resource('/hire_us', 'Backend\HireUSController');
+Route::post('/save_hireus', 'Frontend\HireUSController@store')->name('hireus.store');
 Route::resource('/save_portfolio', 'Backend\PortfolioController');
 Route::resource('/save_service', 'Backend\ServiceController');
 

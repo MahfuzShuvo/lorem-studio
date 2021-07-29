@@ -77,35 +77,20 @@
                     
                     <div class="portfolio-container bd-grid">
                         @foreach (App\Portfolio::all() as $key => $port)
-                            @if ($key == 0)
-                                <div class="portfolio-content w-3 h-2 mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
-                                    <div class="portfolio-content-inner">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
-                                        </div>
-                                        <div class="portfolio-link">
-                                            <a href="{{ route('case_study', $port->id) }}" class="portfolio-link-name">
-                                                <img src="{{ asset('public/assets/img/show_btn.svg') }}" alt="">
-                                                <p class="mt-2 mb-2">View Case Study</p>
-                                            </a>
-                                        </div>
+                            <div class="portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
+                                <div class="portfolio-content-inner">
+                                    <div class="portfolio-img">
+                                        <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
+                                    </div>
+                                    <div class="portfolio-link">
+                                        <a href="{{ route('case_study', $port->id) }}" class="portfolio-link-name">
+                                            {{-- <img src="{{ asset('public/assets/img/show_btn.svg') }}" alt=""> --}}
+                                            <h6>{{ $port->project_title }}</h6>
+                                            <p>{{ App\Service::where('id', $port->service_id)->first()->name }}</p>
+                                        </a>
                                     </div>
                                 </div>
-                            @else
-                                <div class="portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
-                                    <div class="portfolio-content-inner">
-                                        <div class="portfolio-img">
-                                            <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
-                                        </div>
-                                        <div class="portfolio-link">
-                                            <a href="{{ route('case_study', $port->id) }}" class="portfolio-link-name">
-                                                <img src="{{ asset('public/assets/img/show_btn.svg') }}" alt="">
-                                                <p class="mt-2 mb-2">View Case Study</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
+                            </div>
                         @endforeach
                         {{-- <div class="portfolio-content w-3 h-2 mix ux">
                             <div class="portfolio-content-inner">

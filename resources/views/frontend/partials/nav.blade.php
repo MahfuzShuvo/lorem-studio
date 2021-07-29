@@ -3,7 +3,7 @@
         <a href="{{ url('/') }}" class="navbar-brand">
             <img src="{{ asset('public/assets/img/logo.svg') }}" alt="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarId">
+        <button class="navbar-toggler pr-0 pl-0" type="button" data-toggle="collapse" data-target="#navbarId">
             <span>
                 <i class="fas fa-bars hamburger"></i>
             </span>
@@ -16,9 +16,9 @@
                 <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/about' ? 'active':'' }}">
                     <a href="{{ route('about') }}" class="nav-link">ABOUT US</a>
                 </li>
-                <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/services' ? 'active':'' }}">
+                {{-- <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/services' ? 'active':'' }}">
                     <a href="{{ route('services') }}" class="nav-link">SERVICES</a>
-                </li>
+                </li> --}}
                 <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/portfolio' ? 'active':'' }}">
                     <a href="{{ route('portfolio') }}" class="nav-link">PORTFOLIO</a>
                 </li>
