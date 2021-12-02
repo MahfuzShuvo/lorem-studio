@@ -15,7 +15,7 @@ class HireUsController extends Controller
 
         // validate
         $this->validate($request, [
-            'service' => 'required',
+            // 'service' => 'null',
             'customer_name' => 'required',
             'customer_email' => 'required',
             'customer_phone' => 'required',
@@ -23,7 +23,7 @@ class HireUsController extends Controller
         ]);
 
         $hire = new HireUs();
-        $hire->service = implode(', ', $request->service);
+        // $hire->service = implode(', ', $request->service);
         $hire->customer_name = $request->customer_name;
         $hire->customer_email = $request->customer_email;
         $hire->customer_phone = $request->customer_phone;

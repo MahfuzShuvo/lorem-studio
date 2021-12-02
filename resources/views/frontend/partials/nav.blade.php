@@ -16,15 +16,15 @@
                 <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/about' ? 'active':'' }}">
                     <a href="{{ route('about') }}" class="nav-link">ABOUT US</a>
                 </li>
-                {{-- <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/services' ? 'active':'' }}">
+                <!-- <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/services' ? 'active':'' }}">
                     <a href="{{ route('services') }}" class="nav-link">SERVICES</a>
-                </li> --}}
+                </li> -->
                 <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/portfolio' ? 'active':'' }}">
                     <a href="{{ route('portfolio') }}" class="nav-link">PORTFOLIO</a>
                 </li>
-                <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/contact' ? 'active':'' }}">
+                <!-- <li class="nav-item {{ url()->current() == 'http://localhost/lorem-studio/contact' ? 'active':'' }}">
                     <a href="{{ route('contact') }}" class="nav-link">CONTACT US</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="#" class="nav-link"></a>
                 </li>

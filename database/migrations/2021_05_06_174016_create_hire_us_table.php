@@ -15,7 +15,7 @@ class CreateHireUsTable extends Migration
     {
         Schema::create('hire_us', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('service');
+            // $table->string('service');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_phone');

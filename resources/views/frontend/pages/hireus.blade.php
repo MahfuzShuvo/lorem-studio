@@ -81,7 +81,7 @@
             <form action="{{ route('hireus.store') }}" method="post" enctype="multipart/form-data" style="margin-left: -20px;">
 					@csrf
 					
-					<div class="row mt-lg-5">
+					<!-- <div class="row mt-lg-5">
 						<div class="col-lg-6 mt-lg-4">
 							<div class="form-check">
 								<div class="row">
@@ -182,7 +182,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="row mt-4 ml-1">
 						<div class="col-md-8">
 							<div class="row">
@@ -212,7 +212,7 @@
 									</div>
 								</div>
 								<div class="col-md-12 mb-3">
-									<input type="file" name="attachment[]" multiple />
+									<input class="custom-input" type="file" name="attachment[]" multiple />
 								</div>
 								<div class="form-group mt-2" style="margin-left: 15px;">
 									<button class="btn btn-dark form-control-custom-btn" type="submit">HIRE US NOW</button>

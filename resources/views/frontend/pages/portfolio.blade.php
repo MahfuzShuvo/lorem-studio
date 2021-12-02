@@ -77,7 +77,21 @@
                     
                     <div class="portfolio-container bd-grid">
                         @foreach (App\Portfolio::all() as $key => $port)
-                            <div class="portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
+                        <div class="trendy-work-content portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
+                                <div class="trendy-work-content-inner">
+                                    <div class="trendy-work-img">
+                                        <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
+                                    </div>
+                                    <div class="trendy-work-overlay">
+                                        <a href="{{ route('case_study', $port->id) }}" class="title">{{ $port->project_title }}</a>
+                                        <span></span>
+                                        <p class="description">
+                                        {{ App\Service::where('id', $port->service_id)->first()->name }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
                                 <div class="portfolio-content-inner">
                                     <div class="portfolio-img">
                                         <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
@@ -90,7 +104,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         @endforeach
                         {{-- <div class="portfolio-content w-3 h-2 mix ux">
                             <div class="portfolio-content-inner">

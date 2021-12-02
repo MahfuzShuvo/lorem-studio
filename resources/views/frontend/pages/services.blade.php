@@ -77,7 +77,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-1.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -93,7 +93,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-2.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -121,7 +121,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-3.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -137,7 +137,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-4.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -165,7 +165,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-1.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -181,7 +181,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-2.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -209,7 +209,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-3.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -225,7 +225,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-4.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -253,7 +253,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-1.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a
@@ -269,7 +269,7 @@
                                             <img src="{{ asset('public/assets/img/work/work-2.png') }}" alt="" class="image-item">
                                         </div>
                                         <div class="trendy-work-overlay">
-                                            <a href="{{ route('case_study') }}" class="title">Some Trendy work of us</a>
+                                            <a href="#" class="title">Some Trendy work of us</a>
                                             <span></span>
                                             <p class="description">
                                                 It is a long established fact that a reader will be distracted by the readable content of a

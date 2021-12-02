@@ -287,9 +287,9 @@ section {
 .portfolio-container {
 	/* justify-content: center; */
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-auto-rows: 200px 200px;
-	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	/* grid-auto-rows: 200px 200px; */
+	grid-gap: 20px;
 }
 .portfolio-content-inner {
 	width: 100%;
@@ -708,17 +708,18 @@ input[type='checkbox']:checked:after {
 	box-shadow: none; 
 }
 ::-webkit-input-placeholder {
-color: #BCBCBC!important;
+	color: #BCBCBC!important;
 }
 .form-control-custom-btn {
-background: #000;
-color: #fff;
-border-radius: 0px;
-font-size: 13px;
-font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 7px 20px;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
 }
 .form-control-custom-btn:focus {
-box-shadow: none;
+	box-shadow: none;
 }
 
 /* contact */
@@ -897,4 +898,32 @@ box-shadow: none;
 }
 .why-choose-us {
 	margin-top: 100px;
+}
+input[type=file].custom-input {
+	cursor: pointer !important;
+	font-size: 13px;
+    border-radius: 0px;
+    border-left: 2px solid #000!important;
+    background: #e9ecef;
+    border-color: #dee2e6;
+	width: 100%;
+	color: #BCBCBC;
+}
+input[type=file].custom-input::-webkit-file-upload-button {
+	background: #00000025;
+	border: 0;
+	padding: 7px 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: #040404;
+	border-radius: 0.2em;
+}
+input[type=file].custom-input::-ms-browse {
+	background: #00000025;
+	border: 0;
+	padding: 7px 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: #040404;
+	border-radius: 0.2em;
 }

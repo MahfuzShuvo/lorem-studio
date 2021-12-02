@@ -95,9 +95,9 @@
                                                     </td>
                                                     <td class="nk-tb-col">
                                                         @if ($service->status == 0)
-                                                            <span class="badge badge-pill badge-outline-danger" style="font-size: 11px;"><b>Inactive</b></span>
-                                                        @else
                                                             <span class="badge badge-pill badge-outline-success" style="font-size: 11px;"><b>Active</b></span>
+                                                        @else
+                                                            <span class="badge badge-pill badge-outline-danger" style="font-size: 11px;"><b>Inactive</b></span>
                                                         @endif
                                                     </td>
                                                     <td class="nk-tb-col nk-tb-col-tools">
@@ -138,16 +138,16 @@
                                                                             <li class="divider"></li>
                                                                             @if ($service->status == 0)
                                                                                 <li>
-                                                                                    <a href="{{ route('service.status', $service->id) }}" class="text-success">
+                                                                                    <a href="{{ route('service.status', $service->id) }}" class="text-danger">
                                                                                         <em class="icon ni ni-check-circle-fill"></em>
-                                                                                        <span>Mark as Active</span>
+                                                                                        <span>Mark as Inactive</span>
                                                                                     </a>
                                                                                 </li>
                                                                             @else
                                                                                 <li>
-                                                                                    <a href="{{ route('service.status', $service->id) }}" class="text-danger">
+                                                                                    <a href="{{ route('service.status', $service->id) }}" class="text-success">
                                                                                         <em class="icon ni ni-cross-circle-fill"></em>
-                                                                                        <span>Mark as Inactive</span>
+                                                                                        <span>Mark as Active</span>
                                                                                     </a>
                                                                                 </li>
                                                                             @endif
