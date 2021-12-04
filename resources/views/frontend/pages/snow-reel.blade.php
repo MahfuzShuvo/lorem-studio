@@ -2,14 +2,76 @@
 
 @section('style')
     <style>
-
+        nav .navbar-brand img {
+            filter: invert(1);
+        }
+        nav .navbar-nav li a {
+            color: #000;
+            opacity: .54;
+            font-size: 12px;
+            letter-spacing: 0;
+            font-weight: 400;
+            font-family: "Lato", sans-serif;
+        }
+        nav .navbar-nav li a:hover {
+            color: #fff;
+            font-weight: 500;
+            background-color: #1e2f4fd9 !important;
+            opacity: 1;
+            top: 0px;
+            /* padding: 36px 10px 10px; */
+            /* margin-top: -28px; */
+        }
+        nav .navbar-nav .nav-item.active a{
+            color: #fff;
+            font-weight: 500;
+            background-color: #1e2f4fd9 !important;
+            opacity: 1;
+            top: 0px;
+            /* padding: 36px 10px 10px; */
+            /* margin-top: -28px; */
+        }
+        nav .hire-btn {
+            color: #000;
+            border-color: #000;
+        }
+        nav .hire-btn:hover {
+            background: #000;
+            border-color: #000; 
+            color: #fff !important;
+        }
+        nav .hamburger {
+            color: #000;
+        }
+        nav .navbar-collapse {
+            background: #fff;
+            margin: auto -15px;
+        }
+        .services-list {
+            margin: 0px;
+        }
+        .services-list:hover .services-header{
+            color: #1B8CFD;
+        }
+        .services-list a::after {
+            content: none;
+        }
+        .services-list p {
+            margin-top: 10px;
+        }
+        .form-check-input {
+            margin-top: .6rem;
+        }
+        .form-check-input:hover .services-header{
+            color: #1B8CFD;
+        }
     </style>
 @endsection
 
 @section('content')
 	<!-- header -->
 	{{-- @include('frontend.partials.header-snow-reel') --}}
-	<header id="header2">
+	<!-- <header id="header2">
     <div class="container header-content">
         <div class="row">
             <div class="col-lg-6 col-10 text-center">
@@ -25,16 +87,18 @@
             </div>
         </div>
     </div>
-</header>
+</header> -->
 
 	<section id="case-study" class="case-study">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
+					<h3>{{ $portfolio->project_title }}</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <a href="{{ route('hireus') }}" class="hire-btn">HIRE US NOW</a>
 					<div class="case_part_init">
-						<p>
-							{{ $portfolio->project_description }}
-						</p>
+						<b style="font-size: 12px;">DESCRIPTION: </b>
+						<p>{{ $portfolio->project_description }}</p>
 					</div>
 				</div>
 				<div class="col-md-4">
