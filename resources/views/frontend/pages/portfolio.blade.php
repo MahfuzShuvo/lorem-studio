@@ -77,7 +77,7 @@
                     
                     <div class="portfolio-container bd-grid">
                         @foreach (App\Portfolio::all() as $key => $port)
-                        <div class="trendy-work-content portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
+                            <div class="trendy-work-content portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
                                 <div class="trendy-work-content-inner">
                                     <div class="trendy-work-img">
                                         <img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">

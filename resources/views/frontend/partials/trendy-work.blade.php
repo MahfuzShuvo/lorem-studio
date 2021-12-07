@@ -9,70 +9,22 @@
                     </p>
                 </div>
                 <div class="trendy-work-content-row row">
-                	{{-- <div class="col-lg-6"> --}}
-                		<div class="trendy-work-content">
-	                        <div class="trendy-work-content-inner">
-		                        <div class="trendy-work-img">
-		                        	<img src="{{ asset('public/assets/img/work/work-1.png') }}" alt="" class="image-item">
-		                        </div>
-		                        <div class="trendy-work-overlay">
-		                            <a href="#" class="title">Some Trendy work of us</a>
-		                            <span></span>
-		                            <p class="description">
-		                                It is a long established fact that a reader will be distracted by the readable content of a
-		                            </p>
-		                        </div>
-		                    </div>
-	                    </div>
-                	{{-- </div>
-                	<div class="col-lg-6"> --}}
-                		<div class="trendy-work-content">
-	                        <div class="trendy-work-content-inner">
-		                         <div class="trendy-work-img">
-		                        	<img src="{{ asset('public/assets/img/work/work-2.png') }}" alt="" class="image-item">
-		                        </div>
-		                        <div class="trendy-work-overlay">
-		                            <a href="#" class="title">Some Trendy work of us</a>
-		                            <span></span>
-		                            <p class="description">
-		                                It is a long established fact that a reader will be distracted by the readable content of a
-		                            </p>
-		                        </div>
-		                    </div>
-	                    </div>
-                	{{-- </div>
-                	<div class="col-lg-6"> --}}
-                		<div class="trendy-work-content">
-	                        <div class="trendy-work-content-inner">
-		                         <div class="trendy-work-img">
-		                        	<img src="{{ asset('public/assets/img/work/work-3.png') }}" alt="" class="image-item">
-		                        </div>
-		                        <div class="trendy-work-overlay">
-		                            <a href="#" class="title">Some Trendy work of us</a>
-		                            <span></span>
-		                            <p class="description">
-		                                It is a long established fact that a reader will be distracted by the readable content of a
-		                            </p>
-		                        </div>
-		                    </div>
-	                    </div>
-                	{{-- </div>
-                	<div class="col-lg-6"> --}}
-                		<div class="trendy-work-content">
-	                        <div class="trendy-work-content-inner">
-		                         <div class="trendy-work-img">
-		                        	<img src="{{ asset('public/assets/img/work/work-4.png') }}" alt="" class="image-item">
-		                        </div>
-		                        <div class="trendy-work-overlay">
-		                            <a href="#" class="title">Some Trendy work of us</a>
-		                            <span></span>
-		                            <p class="description">
-		                                It is a long established fact that a reader will be distracted by the readable content of a
-		                            </p>
-		                        </div>
-		                    </div>
-	                    </div>
-                	{{-- </div> --}}
+					@foreach (App\Portfolio::where('status', 1)->get() as $key => $port)
+						<div class="trendy-work-content portfolio-content mix {{ App\Service::where('id', $port->service_id)->first()->slug }}">
+							<div class="trendy-work-content-inner">
+								<div class="trendy-work-img">
+									<img src="{{ asset($port->thumbnail) }}" alt="" class="image-item">
+								</div>
+								<div class="trendy-work-overlay">
+									<a href="{{ route('case_study', $port->id) }}" class="title">{{ $port->project_title }}</a>
+									<span></span>
+									<p class="description">
+									{{ App\Service::where('id', $port->service_id)->first()->name }}
+									</p>
+								</div>
+							</div>
+						</div>
+					@endforeach
                 </div>
             </div>
         </div>
